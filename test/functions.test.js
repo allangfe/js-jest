@@ -1,5 +1,30 @@
 const functions = require('../app/js/functions');
 
+// beforeEach(() => initDataBase()); //Inicializa antes de cada teste
+// afterEach(() => closeDataBase()); //Inicializa após cada teste
+
+// beforeAll(() => initDataBase()); //Inicializa antes de todos os testes
+// afterAll(() => closeDataBase()); //Inicializa depois de todos os testes
+
+// const initDataBase = () => console.log('Database Initialized...');
+// const closeDataBase = () => console.log('Database Closed...');
+
+const checkNome = () => console.log('Checando nomes...')
+
+describe('Checando nomes', () => {
+    beforeEach(() => checkNome());
+
+    test('Usuário é Allan', () => {
+        const usuario = 'Allan';
+        expect(usuario).toBe('Allan');
+    });
+
+    test('Usuário é Teste', () => {
+        const usuario = 'Teste';
+        expect(usuario).toBe('Teste');
+    });
+}); // beforeEach roda apenas nos testes que está no bloco discribe
+
 test('Deve somar dois numeros', () => {
     expect(functions.add(1, 2)).toBe(3);
 });
